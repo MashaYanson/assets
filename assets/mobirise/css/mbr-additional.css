@@ -725,6 +725,12 @@ section.lazy-placeholder:after {
 }
 body {
   overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 1);
+}
+h2.mbr-section-title.display-5 {
+  margin-top: 20rem !important;
+    margin-bottom: 20rem !important;
+
 }
 a {
   transition: color 0.6s;
@@ -859,10 +865,10 @@ a {
   margin: 0 !important;
 }
 .cid-uUKIOsVSmx .navbar {
-  min-height: 110px;
+  min-height: 70px;
   transition: all 0.3s;
   border-bottom: 1px solid transparent;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 1);
   padding: 0 !important;
   border-radius: 0 !important;
   border: none !important;
@@ -960,7 +966,7 @@ a {
     flex-basis: auto;
     word-break: break-word;
     padding-right: 0.5rem;
-    max-width: 80%;
+    max-width: 70%;
   }
   .cid-uUKIOsVSmx .navbar .navbar-toggler {
     flex-basis: auto;
@@ -972,17 +978,17 @@ a {
   }
 }
 .cid-uUKIOsVSmx .navbar.navbar-short {
-  min-height: 96px;
+  min-height: 60px;
 }
 .cid-uUKIOsVSmx .navbar.navbar-short .navbar-brand {
-  min-height: 96px;
+  min-height: 60px;
 }
 .cid-uUKIOsVSmx .navbar-brand {
-  min-height: 96px;
+  min-height: 60px;
   flex-shrink: 0;
   align-items: center;
   margin-right: 0;
-  padding: 10px 0;
+  padding: 5px 0;
   transition: all 0.3s;
   word-break: break-word !important;
   z-index: 1;
@@ -1210,9 +1216,9 @@ a {
 .cid-uUKIOsVSmx .nav-item .dropdown-menu:hover {
   background-color: transparent !important;
 }
-.cid-uUKIOsVSmx .navbar {
+/* .cid-uUKIOsVSmx .navbar {
   justify-content: flex-start !important;
-}
+} */
 .cid-uUKIOsVSmx .navbar.opened {
   min-height: 100vh !important;
   justify-content: flex-start !important;
@@ -1267,9 +1273,9 @@ a {
     margin-bottom: 4px !important;
   }
 }
-.cid-uUKIOsVSmx .content-wrap {
-  min-height: 110px;
-}
+/* .cid-uUKIOsVSmx .content-wrap {
+  min-height: 60px;
+} */
 .cid-uUKxTfx1VZ {
   padding-top: 11rem;
   padding-bottom: 5rem;
@@ -1290,6 +1296,44 @@ a {
 .cid-uUKxTfx1VZ .content-wrapper .mbr-label {
   margin-bottom: 50px;
 }
+
+    /* АНИМАЦИЯ ПОСТРОЧНОГО ПОЯВЛЕНИЯ ТЕКСТА ПРИ СКРОЛЛЕ */
+    .cid-uUKxTfx1VZ {
+      min-height: 150vh !important; /* Увеличиваем высоту блока */
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cid-uUKxTfx1VZ .content-wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 20vh; /* Отступ сверху для первой фразы */
+    }
+    
+    .cid-uUKxTfx1VZ .mbr-section-title {
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+    
+    .cid-uUKxTfx1VZ .text-wrapper {
+      margin-top: auto; /* Прижимаем вторую фразу к низу */
+    }
+    
+    .cid-uUKxTfx1VZ .text-line {
+      display: block;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 2s ease-out;
+      transition-delay: 0s;
+    }
+    
+    .cid-uUKxTfx1VZ .text-line.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
 @media (max-width: 992px) {
   .cid-uUKxTfx1VZ .content-wrapper .mbr-label {
     margin-bottom: 40px;

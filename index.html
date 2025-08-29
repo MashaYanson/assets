@@ -53,15 +53,8 @@
     .navbar-collapse.collapsing {
       transition: height 0.35s ease;
     }
-    
-    /* ПРИНУДИТЕЛЬНОЕ ПЕРЕОПРЕДЕЛЕНИЕ СТИЛЕЙ КНОПОК СЛАЙДЕРОВ
-    .cid-uV1ouY8WHU .embla,
-    .cid-uUZhvcucWz .embla {
-      padding-top: 6rem !important;
-    } */
-    
 
-    
+
     .cid-uV1ouY8WHU .embla__button.embla__button--prev,
     .cid-uUZhvcucWz .embla__button.embla__button--prev {
       right: 84px !important;
@@ -116,11 +109,8 @@
       }
     }
     
-    /* GLITCH EFFECT ТОЛЬКО ДЛЯ ФОНОВОГО ИЗОБРАЖЕНИЯ */
-    .cid-uUKxTfx1VZ {
-      position: relative;
-      overflow: hidden;
-    }
+
+
     
     .cid-uUKxTfx1VZ::before {
       content: '';
@@ -134,7 +124,7 @@
       background-position: center;
       background-repeat: no-repeat;
       z-index: -3;
-      animation: glitch-bg 7s infinite linear alternate;
+      animation: glitch-bg 8s infinite linear alternate;
     }
     
     .cid-uUKxTfx1VZ::after {
@@ -169,7 +159,7 @@
          opacity: 0.3;
       }
       6% {
-        clip-path: polygon(0 78%, 100% 78%, 100% 100%, 10% 100%);
+        clip-path: polygon(0 78%, 100% 78%, 100% 10%, 10% 100%);
         transform: translate(10px, -1px);
         filter: hue-rotate(-30deg) contrast(0.9);
          opacity: 0.6;
@@ -373,16 +363,31 @@
     
 
     
-    <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(0, 0, 0);"></div>
+    <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"></div>
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="content-wrapper">
                     
-                    <h2 class="mbr-section-title mbr-fonts-style display-5"><br><br>&nbsp; &nbsp;на стыке<br>&nbsp; &nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; искусства <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;и&nbsp;<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;технологий<br><br><br><br><br><br><div><br></div></h2>
+                    <h2 class="mbr-section-title mbr-fonts-style display-5">
+                        <br><br>
+                        <span class="text-line">&nbsp; &nbsp;на стыке</span><br>
+                        <span class="text-line">&nbsp; &nbsp; &nbsp; &nbsp;</span><br>
+                        <span class="text-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; искусства</span><br>
+                        <span class="text-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><br>
+                        <span class="text-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;и&nbsp;</span><br>
+                        <br>
+                        <span class="text-line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;технологий</span>
+                        <br><br><br><br><br><br>
+                        <div><br></div>
+                    </h2>
                     <div class="text-wrapper">
-                        <p class="mbr-text mbr-fonts-style display-7"><br>исследуем&nbsp;границы взаимодействия человека <br>с цифровыми мирами<br>&nbsp; <br><br><br><br><br><br></p>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            <span class="text-line">исследуем&nbsp;границы взаимодействия человека</span><br>
+                            <span class="text-line">с цифровыми мирами</span>
+        
+                        </p>
                     </div>
                     
                 </div>
@@ -1105,6 +1110,47 @@
   <script src="assets/playervimeo/vimeo_player.js"></script>
   <script src="assets/scrollgallery/scroll-gallery.js"></script>
   <script src="assets/theme/js/script.js"></script>
+  
+  <!-- Скрипт для построчной анимации появления текста при скролле -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const textLines = document.querySelectorAll('.cid-uUKxTfx1VZ .text-line');
+      
+      if (textLines.length > 0) {
+        let animationStarted = false;
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !animationStarted) {
+              animationStarted = true;
+              
+              // Анимируем первую фразу (первые 6 строк)
+              for (let i = 0; i < Math.min(6, textLines.length); i++) {
+                setTimeout(() => {
+                  textLines[i].classList.add('animate');
+                }, i * 300);
+              }
+              
+              // Анимируем вторую фразу (остальные строки) с большой задержкой
+              for (let i = 6; i < textLines.length; i++) {
+                setTimeout(() => {
+                  textLines[i].classList.add('animate');
+                }, 2000 + (i - 6) * 400); // Задержка 2 секунды + 400мс между строками
+              }
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+        
+        // Наблюдаем за первой строкой для запуска всей анимации
+        if (textLines[0]) {
+          observer.observe(textLines[0]);
+        }
+      }
+    });
+  </script>
   
   <!-- Auto-collapse menu script -->
   <script>
