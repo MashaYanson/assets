@@ -109,7 +109,43 @@
       }
     }
     
-
+    /* АНИМАЦИЯ ПОСТРОЧНОГО ПОЯВЛЕНИЯ ТЕКСТА ПРИ СКРОЛЛЕ */
+    .cid-uUKxTfx1VZ {
+      min-height: 10vh !important; /* Увеличиваем высоту блока */
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cid-uUKxTfx1VZ .content-wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 15vh; /* Отступ сверху для первой фразы */
+    }
+    
+    .cid-uUKxTfx1VZ .mbr-section-title {
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+    
+    .cid-uUKxTfx1VZ .text-wrapper {
+      margin-top: auto; /* Прижимаем вторую фразу к низу */
+    }
+    
+    .cid-uUKxTfx1VZ .text-line {
+      display: block;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease-out;
+      transition-delay: 0s;
+    }
+    
+    .cid-uUKxTfx1VZ .text-line.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
 
     
     .cid-uUKxTfx1VZ::before {
@@ -124,7 +160,8 @@
       background-position: center;
       background-repeat: no-repeat;
       z-index: -3;
-      animation: glitch-bg 8s infinite linear alternate;
+      animation: glitch-bg 4s infinite linear alternate;
+       opacity: 0.1;
     }
     
     .cid-uUKxTfx1VZ::after {
@@ -139,14 +176,13 @@
       background-position: center;
       background-repeat: no-repeat;
       z-index: -2;
-      animation: glitch-bg-secondary 18s infinite linear alternate-reverse;
-      opacity: 0.1;
+      animation: glitch-bg-secondary 8s infinite linear alternate-reverse;
+      opacity: 0.08;
       mix-blend-mode: screen;
     }
     
     @keyframes glitch-bg {
       0% {
-        opacity: 1;
         transform: translateZ(0);
         clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
         filter: hue-rotate(-10deg) contrast(0);
@@ -155,11 +191,11 @@
       2% {
         clip-path: polygon(0 78%, 10% 78%, 100% 100%, 0 100%);
         transform: translate(-8px, 2px);
-        filter: hue-rotate(45deg) contrast(1.7);
+        filter: hue-rotate(45deg) contrast(0.7);
          opacity: 0.3;
       }
       6% {
-        clip-path: polygon(0 78%, 100% 78%, 100% 10%, 10% 100%);
+        clip-path: polygon(0 78%, 100% 78%, 100% 100%, 10% 100%);
         transform: translate(10px, -1px);
         filter: hue-rotate(-30deg) contrast(0.9);
          opacity: 0.6;
@@ -199,7 +235,7 @@
        20% {
         clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
         transform: translate3d(-10px, 4px, 0) scaleX(1.02);
-                 opacity: 0.3;
+        opacity: 0.3;
 
         /* filter: hue-rotate(75deg) contrast(0.2); */
       }
@@ -264,12 +300,12 @@
       }
        73.1% {
         clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-        opacity: 0.;
+        opacity: 0.3;
         filter: hue-rotate(-140deg) contrast(1);
       } 
       to {
         clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-        opacity: 0.7;
+        opacity: 0.1;
         transform: translateZ(0);
         filter: hue-rotate(0deg) contrast(0.4);
       }
@@ -289,7 +325,7 @@
       10% {
         transform: translate(9px, -3px) scaleY(0.98);
         clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
-        filter: saturate(2.3) blur(0.3px);
+        filter: saturate(0.3) blur(0.3px);
       }
       28% {
         transform: translate(-8px, 6px) rotate(0.1deg);
@@ -1030,7 +1066,7 @@
                         [&nbsp; К О Н Т А К Т Ы&nbsp;&nbsp;]<br><br>
                     </p>
                     <div class="title-wrapper">
-                        <h2 class="mbr-address mbr-fonts-style display-7">москва <br>ул. правды д. 5&nbsp;<br><br></h2>
+                       <h2 class="mbr-address mbr-fonts-style display-7">москва <br>перевведеновский пер. 18 с. 3&nbsp;<br><br></h2>
                     </div>
                     <div class="mbr-section-btn"><a class="btn btn-secondary-outline display-4" href="#">
                             <span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>
@@ -1038,7 +1074,7 @@
                         </a></div>
                     <div class="text-wrapper">
                         <p class="mbr-phone mbr-fonts-style display-7">
-                            <br>+7 (999) 988-98-88</p>
+                            <br>+7 (917) 595-91-09</p>
                     </div>
                 </div>
             </div>
