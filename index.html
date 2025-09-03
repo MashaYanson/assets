@@ -24,6 +24,169 @@
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=galleryButtonsFixed"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=galleryButtonsFixed" type="text/css">
 
   <style>
+    /* АНИМАЦИЯ ЗАГОЛОВКА METAPHORA */
+    .animated-title {
+      display: inline-block;
+      position: relative;
+      overflow: visible;
+    }
+    
+    .title-bracket {
+      display: inline-block;
+      opacity: 0;
+      font-weight: 700;
+      animation: bracket-appear 0.5s ease-out forwards;
+    }
+    
+    .title-bracket:first-child {
+      animation-delay: 0.3s;
+    }
+    
+    .title-bracket:last-child {
+      animation-delay: 0.8s;
+    }
+    
+    .title-letters {
+      display: inline-block;
+      position: relative;
+    }
+    
+    .letter {
+      display: inline-block;
+      opacity: 0;
+      position: relative;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #ffffff;
+      animation: 
+        letter-glitch-enter 0.8s ease-out forwards,
+        letter-glow-white 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+    }
+    
+    .letter:nth-child(2) { animation-delay: 0.5s, 0.5s; }
+    .letter:nth-child(4) { animation-delay: 0.7s, 0.7s; }
+    .letter:nth-child(6) { animation-delay: 0.9s, 0.9s; }
+    .letter:nth-child(8) { animation-delay: 1.1s, 1.1s; }
+    .letter:nth-child(10) { animation-delay: 1.3s, 1.3s; }
+    .letter:nth-child(12) { animation-delay: 1.5s, 1.5s; }
+    .letter:nth-child(14) { animation-delay: 1.7s, 1.7s; }
+    .letter:nth-child(16) { animation-delay: 1.9s, 1.9s; }
+    .letter:nth-child(18) { animation-delay: 2.1s, 2.1s; }
+    
+    .letter-space {
+      display: inline-block;
+      width: 0.5em;
+    }
+    
+    /* Глитч эффект при появлении букв */
+    @keyframes letter-glitch-enter {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px) rotateY(90deg) scale(0);
+        filter: blur(10px) hue-rotate(180deg);
+      }
+      20% {
+        opacity: 0.3;
+        transform: translateX(20px) rotateY(-15deg) scale(1.2);
+        filter: blur(5px) hue-rotate(90deg);
+      }
+      40% {
+        opacity: 0.7;
+        transform: translateX(-10px) rotateY(10deg) scale(0.9);
+        filter: blur(2px) hue-rotate(-45deg);
+      }
+      60% {
+        opacity: 1;
+        transform: translateX(5px) rotateY(-5deg) scale(1.05);
+        filter: blur(1px) hue-rotate(0deg);
+      }
+      80% {
+        opacity: 1;
+        transform: translateX(-2px) rotateY(2deg) scale(0.98);
+        filter: blur(0px) hue-rotate(0deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) rotateY(0deg) scale(1);
+        filter: blur(0px) hue-rotate(0deg);
+      }
+    }
+    
+    /* White glow effect */
+    @keyframes letter-glow-white {
+      0%, 100% {
+        text-shadow: 
+          0 0 5px rgba(255, 255, 255, 0.4),
+          0 0 10px rgba(255, 255, 255, 0.2),
+          0 0 15px rgba(255, 255, 255, 0.1);
+        opacity: 1;
+      }
+      25% {
+        text-shadow: 
+          0 0 8px rgba(255, 255, 255, 0.6),
+          0 0 15px rgba(255, 255, 255, 0.3),
+          0 0 20px rgba(255, 255, 255, 0.2);
+        opacity: 0.95;
+      }
+      50% {
+        text-shadow: 
+          0 0 10px rgba(255, 255, 255, 0.8),
+          0 0 20px rgba(255, 255, 255, 0.4),
+          0 0 30px rgba(255, 255, 255, 0.2);
+        opacity: 0.9;
+      }
+      75% {
+        text-shadow: 
+          0 0 6px rgba(255, 255, 255, 0.5),
+          0 0 12px rgba(255, 255, 255, 0.3),
+          0 0 18px rgba(255, 255, 255, 0.15);
+        opacity: 0.95;
+      }
+    }
+    
+    /* Анимация скобок */
+    @keyframes bracket-appear {
+      0% {
+        opacity: 0;
+        transform: scale(1) rotate(180deg);
+      }
+      50% {
+        opacity: 0.7;
+        transform: scale(1.2) rotate(-10deg);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+    
+    /* Hover эффект для всего заголовка
+    .animated-title:hover .letter {
+      animation-duration: 1.7s;
+      animation-name: letter-hover-glitch;
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes letter-hover-glitch {
+      0% { transform: translateY(0); }
+      25% { transform: translateY(-3px) rotateZ(1deg); }
+      50% { transform: translateY(2px) rotateZ(-1deg); }
+      75% { transform: translateY(-1px) rotateZ(0.5deg); }
+      100% { transform: translateY(0) rotateZ(0deg); }
+    } */
+    
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .letter {
+        font-size: 0.9em;
+      }
+      
+      .letter-space {
+        width: 0.3em;
+      }
+    }
+    
     /* Плавная анимация для сворачивания меню */
     .navbar-collapse {
       transition: all 0.3s ease-in-out;
@@ -375,7 +538,33 @@
         <div class="content-wrap container">
             <div class="navbar-brand">
                 
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="#">&nbsp; &nbsp;[ M E T A P H O R A ]<br></a></span>
+                <span class="navbar-caption-wrap">
+                    <a class="navbar-caption text-white display-4" href="#">
+                        <span class="animated-title">
+                            <span class="title-bracket">[ &nbsp;</span>
+                             <span class="title-letters">
+                                <span class="letter" data-letter="M">M</span>
+                                <span class="letter-space"></span>
+                                <span class="letter" data-letter="E">E</span>
+                                <span class="letter-space"></span>
+                                <span class="letter" data-letter="T">T</span>
+                                <span class="letter-space"></span>
+                                <span class="letter" data-letter="A">A</span>
+                                <span class="letter-space"></span>
+                                <span class="letter" data-letter="P">P</span>
+                                <span class="letter-space"></span>
+                                <span class="letter" data-letter="H">H</span>
+                                <span class="letter-space"></span>
+                                <span class="letter" data-letter="O">O</span>
+                                <span class="letter-space"></span>
+                                <span class="letter" data-letter="R">R</span>
+                                <span class="letter-space"></span>
+                                <span class="letter" data-letter="A">A</span>
+                            </span>
+                            <span class="title-bracket">&nbsp; ]</span>
+                        </span>
+                    </a>
+                </span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -1148,6 +1337,86 @@
   <script src="assets/playervimeo/vimeo_player.js"></script>
   <script src="assets/scrollgallery/scroll-gallery.js"></script>
   <script src="assets/theme/js/script.js"></script>
+  
+  <!-- Скрипт для анимации заголовка METAPHORA -->
+  <script>
+    // АНИМАЦИЯ ЗАГОЛОВКА METAPHORA
+    document.addEventListener('DOMContentLoaded', function() {
+      const letters = document.querySelectorAll('.letter');
+      const animatedTitle = document.querySelector('.animated-title');
+      
+      // Добавляем случайный глитч эффект каждые 10-15 секунд
+      function randomGlitch() {
+        const randomLetter = letters[Math.floor(Math.random() * letters.length)];
+        randomLetter.style.animation = 'letter-hover-glitch 0.3s ease-out';
+        
+        setTimeout(() => {
+          randomLetter.style.animation = '';
+        }, 300);
+        
+        // Следующий глитч через случайное время
+        setTimeout(randomGlitch, Math.random() * 10000 + 5000);
+      }
+      
+      // Запускаем случайные глитчи после завершения основной анимации
+      setTimeout(randomGlitch, 4000);
+      
+      // Интерактивный эффект при наведении мыши
+      if (animatedTitle) {
+        animatedTitle.addEventListener('mouseenter', function() {
+          letters.forEach((letter, index) => {
+            setTimeout(() => {
+              letter.style.transform = `translateY(-2px) rotateZ(${Math.random() * 4 - 2}deg)`;
+              letter.style.textShadow = `
+                0 0 8px rgba(255, 255, 255, 0.8),
+                0 0 16px rgba(255, 255, 255, 0.5),
+                0 0 24px rgba(255, 255, 255, 0.3)
+              `;
+            }, index * 50);
+          });
+        });
+        
+        animatedTitle.addEventListener('mouseleave', function() {
+          letters.forEach((letter, index) => {
+            setTimeout(() => {
+              letter.style.transform = 'translateY(0) rotateZ(0deg)';
+              letter.style.textShadow = '';
+            }, index * 30);
+          });
+        });
+      }
+      
+      // Эффект при клике - мощный глитч всех букв
+      if (animatedTitle) {
+        animatedTitle.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          letters.forEach((letter, index) => {
+            setTimeout(() => {
+              // Сильный глитч эффект
+              letter.style.animation = 'none';
+              letter.style.transform = `
+                translateX(${Math.random() * 20 - 10}px) 
+                translateY(${Math.random() * 10 - 5}px) 
+                rotateZ(${Math.random() * 20 - 10}deg) 
+                scale(${0.9 + Math.random() * 0.2})
+              `;
+              letter.style.filter = `
+                hue-rotate(${Math.random() * 360}deg) 
+                contrast(${1 + Math.random()})
+              `;
+              
+              // Возвращаем в норму
+              setTimeout(() => {
+                letter.style.transform = 'translateX(0) translateY(0) rotateZ(0deg) scale(1)';
+                letter.style.filter = 'hue-rotate(0deg) contrast(1)';
+              }, 200);
+            }, index * 20);
+          });
+        });
+      }
+    });
+  </script>
   
   <!-- Скрипт для построчной анимации появления текста при скролле -->
   <script>
