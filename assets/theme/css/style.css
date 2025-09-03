@@ -1223,7 +1223,6 @@ blockquote {
 
 /* Стили для унификации видео блоков */
 .container-1 {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -1236,7 +1235,7 @@ blockquote {
 
 .video-block {
   padding: 10px;
-  flex: 0 0 auto;
+  /* flex: 0 0 auto; */
 }
 
 /* Адаптивная сетка: 3 колонки на десктопе, 2 на планшете, 1 на мобильном */
