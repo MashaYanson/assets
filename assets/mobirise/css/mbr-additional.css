@@ -123,6 +123,7 @@ body {
     font-size: calc( 1.14rem + (1.4 - 1.14) * ((100vw - 62rem) / (87 - 62)));
     line-height: calc( 1.4 * (1.14rem + (1.4 - 1.14) * ((100vw - 62rem) / (87 - 62))));
   }
+  
 }
 /* Buttons */
 .btn {
