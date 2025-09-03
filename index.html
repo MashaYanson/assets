@@ -523,6 +523,85 @@
         filter: saturate(0.9) blur(10px);
       }
     }  */
+    
+    /* АНИМАЦИЯ METAPHORA С БЕЛЫМ БЛОКОМ */
+    .metaphora-animation-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 60px;
+    }
+    
+    .metaphora-title {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .metaphora-block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 80%;
+      background: hsl(0, 0%, 100%, 0.5);
+      z-index: 2;
+      animation: metaphoraBlockAnimation 3s cubic-bezier(.74, .06, .4, .92) forwards;
+    }
+    
+    .metaphora-text {
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+      animation: metaphoraTextFadeIn 1s forwards;
+      animation-delay: 2.4s;
+      text-align: center;
+      width: 100%;
+    }
+    
+    /* Анимация белого блока */
+    @keyframes metaphoraBlockAnimation {
+      0% {
+        width: 0%;
+        left: 45%;
+      }
+      50% {
+        width: 35%;
+        left: 25%;
+      }
+      100% {
+        width: 0%;
+        left: 60%;
+      }
+    }
+    
+    /* Анимация появления текста */
+    @keyframes metaphoraTextFadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    /* Адаптивность для мобильных устройств */
+    @media (max-width: 768px) {
+      .metaphora-animation-box {
+        height: 50px;
+      }
+      
+      .metaphora-text {
+        font-size: 1.2rem;
+      }
+    }
+    
   </style>
 
   
@@ -690,12 +769,13 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-5">
-                <div class="title-wrapper">
-                    <p class="mbr-label mbr-fonts-style display-5 scroll-animate" data-animation="fadeInLeft" data-delay="800">
-                        [ технологии ]
-                    </p>
-                    
-                </div>
+                 <div class="split-text-container mb-1 justify-content-start">
+                <h4 class="mbr-section-title mbr-fonts-style display-5 scroll-animate" data-animation="fadeInLeft" data-delay="200">
+                    <span class="text-part left">[&nbsp;</span>
+                    <span class="text-part right">технологии ]</span>
+                </h4>
+            </div>
+              
             </div>
             <div class="col-12 col-lg-5"></div>
             <div class="col-12 col-lg-10">
@@ -837,8 +917,16 @@
     
     
     <div class="container">
-        <div class="mbr-section-head">
-            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-5">[ артисты ]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h4>
+       
+
+
+         <div class="mbr-section-head">
+            <div class="split-text-container justify-content-end">
+                <h4 class="mbr-section-title mbr-fonts-style mb-1 display-5">
+                    <span class="text-part left">[&nbsp;</span>
+                    <span class="text-part right">артисты ]</span>
+                </h4>
+            </div>
             
         </div>
         <div class="row items-row align-items-stretch justify-content-end">
@@ -968,7 +1056,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="title-wrapper">
-                    <h2 class="mbr-section-title mbr-fonts-style display-7">&nbsp; &nbsp;[ M E T A P H O R A ]</h2>
+                    <div class="metaphora-animation-box">
+                        <div class="metaphora-title">
+                            <span class="metaphora-block"></span>
+                            <h2 class="metaphora-text mbr-section-title mbr-fonts-style display-10">[ M E T A P H O R A ]</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-lg-6 video-block">

@@ -132,6 +132,26 @@
             textElement.innerHTML = words.map((word, index) => 
                 `<span class="scroll-animate" data-animation="${opts.animation}" data-delay="${opts.baseDelay + (index * opts.wordDelay)}">${word}</span>`
             ).join(' ');
+        },
+        
+        splitText: function(container, options = {}) {
+            const defaultOptions = {
+                leftDelay: 300,
+                rightDelay: 600
+            };
+            const opts = { ...defaultOptions, ...options };
+            
+            const leftPart = container.querySelector('.text-part.left');
+            const rightPart = container.querySelector('.text-part.right');
+            
+            if (leftPart && rightPart) {
+                // Set up the animation trigger
+                leftPart.style.animationDelay = opts.leftDelay + 'ms';
+                rightPart.style.animationDelay = opts.rightDelay + 'ms';
+                
+                // Add a class to trigger animations when container is visible
+                container.classList.add('split-text-ready');
+            }
         }
     };
 
@@ -147,6 +167,32 @@
     // Initialize when DOM is ready
     domReady(function() {
         initEnhancedScrollAnimations();
+        
+        // Initialize split text animation for artists section
+        const splitTextContainers = document.querySelectorAll('.split-text-container');
+        splitTextContainers.forEach(container => {
+            animationPresets.splitText(container);
+            
+            // Use Intersection Observer to trigger split text animation
+            if (window.IntersectionObserver) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-split-text');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.3,
+                    rootMargin: '0px 0px -20px 0px'
+                });
+                
+                observer.observe(container);
+            } else {
+                // Fallback for older browsers
+                container.classList.add('animate-split-text');
+            }
+        });
         
         // Apply advanced presets to specific elements if needed
         const textElements = document.querySelectorAll('.mbr-text .scroll-animate span');

@@ -313,6 +313,69 @@ section .mbr-background-video-preview {
   }
 }
 
+/* Split Text Animation for Artists Section */
+.split-text-container {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.split-text-container .mbr-section-title {
+    display: flex;
+    align-items: center;
+}
+
+.text-part {
+    display: inline-block;
+    position: relative;
+    transform: translateX(0);
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.16, 0.84, 0.44, 1);
+    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-play-state: paused;
+}
+
+/* Start animations when container is visible */
+.split-text-container.animate-split-text .text-part {
+    animation-play-state: running;
+}
+
+.text-part.left {
+    transform: translateX(-150%);
+    animation-name: slide-in-left;
+    animation-delay: 0.3s;
+}
+
+.text-part.right {
+    transform: translateX(150%);
+    animation-name: slide-in-right;
+    animation-delay: 0.6s;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-150%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 /*! Content wrapper positioning */
 .content-wrapper {
   display: flex;
