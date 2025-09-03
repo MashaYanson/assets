@@ -400,6 +400,7 @@ section .mbr-background-video-preview {
   align-items: center;
   justify-content: center;
   padding: 40px 0;
+  margin-top: 20px;
   letter-spacing: 1px;
   line-height: 2;
 }
@@ -1218,4 +1219,85 @@ blockquote {
     width: 300% !important;
     left: -100% !important;
   }
+}
+
+/* Стили для унификации видео блоков */
+.container-1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-1 .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+
+.video-block {
+  padding: 10px;
+  flex: 0 0 auto;
+}
+
+/* Адаптивная сетка: 3 колонки на десктопе, 2 на планшете, 1 на мобильном */
+@media (min-width: 992px) {
+  .video-block {
+    width: 33.333333%; /* 3 видео в ряд */
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .video-block {
+    width: 50%; /* 2 видео в ряд */
+  }
+}
+
+@media (max-width: 575px) {
+  .video-block {
+    width: 100%; /* 1 видео в ряд */
+  }
+}
+
+/* Стили для mbr-figure и видео */
+.video-block .mbr-figure {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Фиксированная высота для всех блоков */
+  overflow: hidden;
+  background-color: #000;
+}
+
+.video-block .mbr-figure video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover; /* Обрезка по центру */
+}
+
+/* Увеличение высоты блоков на больших экранах */
+@media (min-width: 992px) {
+  .video-block .mbr-figure {
+    height: 250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .video-block .mbr-figure {
+    height: 280px;
+  }
+}
+
+.video-block .mbr-figure:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-block .mbr-figure video[style*="width"] {
+  width: auto !important;
 }
