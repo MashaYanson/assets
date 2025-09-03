@@ -199,6 +199,203 @@ section .mbr-background-video-preview {
   font-weight: 500;
 }
 
+/*! Scroll-driven animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+.scroll-animate.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation variants */
+.scroll-animate[data-animation="fadeInLeft"] {
+  transform: translateX(-50px);
+}
+
+.scroll-animate[data-animation="fadeInLeft"].animated {
+  transform: translateX(0);
+}
+
+.scroll-animate[data-animation="fadeInRight"] {
+  transform: translateX(50px);
+}
+
+.scroll-animate[data-animation="fadeInRight"].animated {
+  transform: translateX(0);
+}
+
+.scroll-animate[data-animation="fadeInUp"] {
+  transform: translateY(50px);
+}
+
+.scroll-animate[data-animation="fadeInUp"].animated {
+  transform: translateY(0);
+}
+
+.scroll-animate[data-animation="slideInUp"] {
+  transform: translateY(80px) scale(0.95);
+}
+
+.scroll-animate[data-animation="slideInUp"].animated {
+  transform: translateY(0) scale(1);
+}
+
+.scroll-animate[data-animation="fadeInDown"] {
+  transform: translateY(-50px);
+}
+
+.scroll-animate[data-animation="fadeInDown"].animated {
+  transform: translateY(0);
+}
+
+.scroll-animate[data-animation="zoomIn"] {
+  transform: scale(0.8);
+}
+
+.scroll-animate[data-animation="zoomIn"].animated {
+  transform: scale(1);
+}
+
+.scroll-animate[data-animation="rotateIn"] {
+  transform: rotate(-10deg) scale(0.9);
+}
+
+.scroll-animate[data-animation="rotateIn"].animated {
+  transform: rotate(0deg) scale(1);
+}
+
+/* Stagger animations with delays */
+.scroll-animate[data-delay="200"] {
+  transition-delay: 0.2s;
+}
+
+.scroll-animate[data-delay="400"] {
+  transition-delay: 0.4s;
+}
+
+.scroll-animate[data-delay="600"] {
+  transition-delay: 0.6s;
+}
+
+.scroll-animate[data-delay="800"] {
+  transition-delay: 0.8s;
+}
+
+.scroll-animate[data-delay="1000"] {
+  transition-delay: 1.0s;
+}
+
+.scroll-animate[data-delay="1200"] {
+  transition-delay: 1.2s;
+}
+
+.scroll-animate[data-delay="1400"] {
+  transition-delay: 1.4s;
+}
+
+/* Enhanced transitions for smooth effects */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-animate {
+    transition-duration: 1s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animate {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/*! Content wrapper positioning */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 400px;
+}
+
+.content-wrapper .mbr-section-btn {
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+/*! Scroll-driven background color animation */
+.scroll-bg-transition {
+  transition: background-color 0.6s ease-out;
+  will-change: background-color;
+}
+
+/* Alternative gradient approach for smoother transition */
+.scroll-bg-gradient {
+  transition: background 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: background;
+}
+
+.scroll-bg-gradient.bg-darkened {
+  background: linear-gradient(to bottom, #333333 0%, #000000 100%);
+}
+
+/*! Progressive letter appearance animation for METAPHORA */
+.progressive-letters {
+  font-family: inherit;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+  will-change: opacity;
+}
+
+.progressive-letters.animate {
+  opacity: 1;
+}
+
+.bracket {
+  display: inline;
+}
+
+.letter {
+  display: inline;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+.space {
+  display: inline;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+/* Progressive letter animation delays */
+.progressive-letters.animate .letter:nth-child(3) { transition-delay: 0.5s; } /* M */
+.progressive-letters.animate .space:nth-child(4) { transition-delay: 0.7s; } /* space after M */
+.progressive-letters.animate .letter:nth-child(5) { transition-delay: 0.9s; } /* E */
+.progressive-letters.animate .space:nth-child(6) { transition-delay: 1.1s; } /* space after E */
+.progressive-letters.animate .letter:nth-child(7) { transition-delay: 1.3s; } /* T */
+.progressive-letters.animate .space:nth-child(8) { transition-delay: 1.5s; } /* space after T */
+.progressive-letters.animate .letter:nth-child(9) { transition-delay: 1.7s; } /* A */
+.progressive-letters.animate .space:nth-child(10) { transition-delay: 1.9s; } /* space after A */
+.progressive-letters.animate .letter:nth-child(11) { transition-delay: 2.1s; } /* P */
+.progressive-letters.animate .space:nth-child(12) { transition-delay: 2.3s; } /* space after P */
+.progressive-letters.animate .letter:nth-child(13) { transition-delay: 2.5s; } /* H */
+.progressive-letters.animate .space:nth-child(14) { transition-delay: 2.7s; } /* space after H */
+.progressive-letters.animate .letter:nth-child(15) { transition-delay: 2.9s; } /* O */
+.progressive-letters.animate .space:nth-child(16) { transition-delay: 3.1s; } /* space after O */
+.progressive-letters.animate .letter:nth-child(17) { transition-delay: 3.3s; } /* R */
+.progressive-letters.animate .space:nth-child(18) { transition-delay: 3.5s; } /* space after R */
+.progressive-letters.animate .letter:nth-child(19) { transition-delay: 3.7s; } /* A */
+
+/* Show letters progressively */
+.progressive-letters.animate .letter,
+.progressive-letters.animate .space {
+  opacity: 1;
+}
+
 .mbr-bold {
   font-weight: 700;
 }
