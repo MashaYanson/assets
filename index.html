@@ -1036,7 +1036,7 @@
                             </div>
                             
                             
-                            
+    
                         </div>
                         
                     </div>
@@ -1286,71 +1286,10 @@
   </div>
 </section>
 	
-	
-	<!-- <div class="container-fluid">
-		<div class="row justify-content-center mb-5">
-			<div class="col-12 content-head">
-				<div class="mbr-section-head">
-					<h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-7">[ клиенты ]</h4>
-					
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			
-			
-			<div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2 active">
-				<div class="item-wrapper">
-					<div class="item-img mb-3">
-						<img src="assets/images/photo-2020-09-21-18-58-21-560x378.png" alt="" title="" data-slide-to="0" data-bs-slide-to="0">
-					</div>
-					
-				</div>
-			</div><div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
-				<div class="item-wrapper">
-					<div class="item-img mb-3">
-						<img src="assets/images/d09fd09cd0add0a4-spief-268x104.jpg" alt="" title="" data-slide-to="1" data-bs-slide-to="1">
-					</div>
-					
-				</div>
-			</div>
-			<div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
-				<div class="item-wrapper">
-					<div class="item-img mb-3">
-						<img src="assets/images/59363266120569d1e17ddb6dfcd12543-736x489.jpg" alt="" title="" data-slide-to="2" data-bs-slide-to="2">
-					</div>
-					
-				</div>
-			</div><div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
-				<div class="item-wrapper">
-					<div class="item-img mb-3">
-						<img src="assets/images/0c5ace81bacdf7269078e5a5d6e119a5-2-420x235.jpeg" alt="" title="" data-slide-to="3" data-bs-slide-to="3">
-					</div>
-					
-				</div>
-			</div><div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
-				<div class="item-wrapper">
-					<div class="item-img mb-3">
-						<img src="assets/images/signal-2019.jpg.webp" alt="" title="" data-slide-to="4" data-bs-slide-to="4">
-					</div>
-					
-				</div>
-			</div><div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
-				<div class="item-wrapper">
-					<div class="item-img mb-3">
-						<img src="assets/images/hselogo-fullsize-inverted.svg" alt="" title="" data-slide-to="5" data-bs-slide-to="5">
-					</div>
-					
-				</div>
-			</div>
 
-
-		</div>
-	</div> -->
-<!-- </section> 
+</section>
 
 <section data-bs-version="5.1" class="contacts01 identitym5 cid-uV1sDiBWbV" id="contacts01-15">
-     -->
 
     <div class="container-fluid">
         <div class="row flex-row-reverse">
@@ -1364,13 +1303,25 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-5 card">
+             
+            <div class="split-text-container mb-10 flex col-12 col-lg-5 card">
+                <h4 class="mbr-section-title mbr-fonts-style display-5 scroll-animate" data-animation="" data-delay="200">
+                    <span class="text-part left">[&nbsp;</span>
+                    <span class="text-part right">К О Н Т А К Т Ы&nbsp;&nbsp;]</span>
+                </h4>
                 <div class="content-wrapper">
-                    <p class="mbr-label mbr-fonts-style display-7">
-                        [&nbsp; К О Н Т А К Т Ы&nbsp;&nbsp;]<br><br>
-                    </p>
+
+
+<!-- 
+                      <div class="split-text-container mb-1 justify-content-start">
+                <h4 class="mbr-section-title mbr-fonts-style display-5 scroll-animate" data-animation="fadeInLeft" data-delay="200">
+                    <span class="text-part left">[&nbsp;</span>
+                    <span class="text-part right">технологии ]</span>
+                </h4>
+            </div> -->
+                   
                     <div class="title-wrapper">
-                       <h2 class="mbr-address mbr-fonts-style display-7">москва <br>перевведеновский пер. 18 с. 13&nbsp;<br><br></h2>
+                       <h3 class="mbr-address mbr-fonts-style display-4">москва <br>перевведеновский пер. 18 с. 13&nbsp;<br><br></h3>
                     </div>
                     <div class="mbr-section-btn"><a class="btn btn-secondary-outline display-4" href="#">
                             <span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>
@@ -1469,11 +1420,11 @@
         }, 300);
         
         // Следующий глитч через случайное время
-        setTimeout(randomGlitch, Math.random() * 10000 + 5000);
+        setTimeout(randomGlitch, Math.random() * 10000 + 4000);
       }
       
       // Запускаем случайные глитчи после завершения основной анимации
-      setTimeout(randomGlitch, 4000);
+      setTimeout(randomGlitch, 3500);
       
       // Интерактивный эффект при наведении мыши
       if (animatedTitle) {
@@ -1501,33 +1452,128 @@
       }
       
       // Эффект при клике - мощный глитч всех букв
-      if (animatedTitle) {
-        animatedTitle.addEventListener('click', function(e) {
-          e.preventDefault();
+    //   if (animatedTitle) {
+    //     animatedTitle.addEventListener('click', function(e) {
+    //       e.preventDefault();
           
-          letters.forEach((letter, index) => {
-            setTimeout(() => {
-              // Сильный глитч эффект
-              letter.style.animation = 'none';
-              letter.style.transform = `
-                translateX(${Math.random() * 20 - 10}px) 
-                translateY(${Math.random() * 10 - 5}px) 
-                rotateZ(${Math.random() * 20 - 10}deg) 
-                scale(${0.9 + Math.random() * 0.2})
-              `;
-              letter.style.filter = `
-                hue-rotate(${Math.random() * 360}deg) 
-                contrast(${1 + Math.random()})
-              `;
+    //       letters.forEach((letter, index) => {
+    //         setTimeout(() => {
+    //           // Сильный глитч эффект
+    //           letter.style.animation = 'none';
+    //           letter.style.transform = `
+    //             translateX(${Math.random() * 20 - 10}px) 
+    //             translateY(${Math.random() * 10 - 5}px) 
+    //             rotateZ(${Math.random() * 20 - 10}deg) 
+    //             scale(${0.9 + Math.random() * 0.2})
+    //           `;
+    //           letter.style.filter = `
+    //             hue-rotate(${Math.random() * 360}deg) 
+    //             contrast(${1 + Math.random()})
+    //           `;
               
-              // Возвращаем в норму
-              setTimeout(() => {
-                letter.style.transform = 'translateX(0) translateY(0) rotateZ(0deg) scale(1)';
-                letter.style.filter = 'hue-rotate(0deg) contrast(1)';
-              }, 200);
-            }, index * 20);
-          });
-        });
+    //           // Возвращаем в норму
+    //           setTimeout(() => {
+    //             letter.style.transform = 'translateX(0) translateY(0) rotateZ(0deg) scale(1)';
+    //             letter.style.filter = 'hue-rotate(0deg) contrast(1)';
+    //           }, 200);
+    //         }, index * 20);
+    //       });
+    //     });
+    //   }
+    });
+  </script>
+  
+  <!-- Скрипт для scroll-driven анимации METAPHORA -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const metaphoraText = document.querySelector('.metaphora-text');
+      const metaphoraBlock = document.querySelector('.metaphora-animation-box');
+      
+      if (metaphoraText && metaphoraBlock) {
+        console.log('METAPHORA elements found:', { text: metaphoraText, block: metaphoraBlock });
+        
+        // Проверяем поддержку CSS scroll-driven animations
+        let supportsScrollTimeline = false;
+        try {
+          supportsScrollTimeline = CSS.supports('animation-timeline', 'scroll()');
+        } catch (e) {
+          supportsScrollTimeline = false;
+        }
+        
+        console.log('Browser supports scroll-timeline:', supportsScrollTimeline);
+        
+        // Всегда используем JavaScript fallback для надежности
+        let ticking = false;
+        
+        function updateScale() {
+          const rect = metaphoraText.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          
+          // Вычисляем прогресс скролла для элемента
+          const elementTop = rect.top;
+          const elementHeight = rect.height;
+          const elementBottom = rect.bottom;
+          
+          // Элемент начинает анимацию когда появляется в viewport
+          // и заканчивает когда проходит 30% пути
+          let scrollProgress = 0;
+          
+          if (elementTop < windowHeight && elementBottom > 0) {
+            // Элемент виден в viewport
+            const visibleHeight = Math.min(elementBottom, windowHeight) - Math.max(elementTop, 0);
+            const totalPossibleVisible = elementHeight + windowHeight;
+            scrollProgress = (windowHeight - elementTop) / totalPossibleVisible;
+            scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+          }
+          
+          // Масштабирование от 0.3 до 2.2 в зависимости от прогресса скролла
+          const minScale = 0.3;
+          const maxScale = 2.2;
+          const scale = minScale + (maxScale - minScale) * scrollProgress;
+          
+          // Прозрачность от 0.3 до 1
+          const minOpacity = 0.3;
+          const maxOpacity = 1;
+          const opacity = minOpacity + (maxOpacity - minOpacity) * scrollProgress;
+          
+          // Движение блока вниз (от 0 до 50px)
+          const maxTranslateY = 50; // максимальное смещение вниз в пикселях
+          const translateY = maxTranslateY * scrollProgress;
+          
+          // Применяем трансформации
+          metaphoraText.style.transform = `scale(${scale})`;
+          metaphoraText.style.opacity = opacity;
+          metaphoraBlock.style.transform = `translateY(${translateY}px)`;
+          
+          // Логирование для отладки
+          if (scrollProgress > 0 && scrollProgress < 1) {
+            console.log('Scroll progress:', scrollProgress.toFixed(2), 'Scale:', scale.toFixed(2), 'TranslateY:', translateY.toFixed(1) + 'px');
+          }
+          
+          ticking = false;
+        }
+        
+        function requestTick() {
+          if (!ticking) {
+            requestAnimationFrame(updateScale);
+            ticking = true;
+          }
+        }
+        
+        // Запускаем анимацию при скролле
+        window.addEventListener('scroll', requestTick, { passive: true });
+        window.addEventListener('resize', requestTick, { passive: true });
+        
+        // Начальное обновление
+        setTimeout(updateScale, 100);
+        
+        // Если CSS scroll-driven animation не поддерживается, отключаем её
+        if (!supportsScrollTimeline) {
+          metaphoraText.style.animation = 'none';
+          metaphoraText.style.animationTimeline = 'none';
+        }
+      } else {
+        console.error('METAPHORA elements not found!', { text: metaphoraText, block: metaphoraBlock });
       }
     });
   </script>
