@@ -7,7 +7,7 @@ body {
   font-style: normal;
   line-height: 1.5;
   font-weight: 400;
-  color: #232323;
+  color: #000000;
   position: relative;
 }
 
@@ -51,6 +51,24 @@ button {
 .carousel-control:hover {
   background-color: #edefea !important;
   opacity: 1 !important;
+}
+
+/* Prevent gray background flash on parallax sections */
+.mbr-parallax-background {
+  background-color: #000000 !important;
+  background-image: url("https://s3.ru1.storage.beget.cloud/88095fdffa8e-tidy-trish/meta4/video/Pink_RAW.mp4") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Specific backgrounds for header sections */
+#header02-4.mbr-parallax-background {
+  background-image: url("https://s3.ru1.storage.beget.cloud/88095fdffa8e-tidy-trish/meta4/video/Pink_RAW.mp4") !important;
+}
+
+#image01-2.mbr-parallax-background {
+  background-image: url("https://s3.ru1.storage.beget.cloud/88095fdffa8e-tidy-trish/meta4/video/Pink_RAW.mp4") !important;
 }
 
 .modalWindow-video-container {
