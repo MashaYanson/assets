@@ -436,10 +436,10 @@
    
     
     <div class="language-buttons">
-      <a href="index-eng.html" class="language-btn" id="btn-en">
+      <a href="main_eng.html" class="language-btn" id="btn-en">
         ENG
       </a>
-      <a href="index-ru.html" class="language-btn" id="btn-ru">
+      <a href="main_ru.html" class="language-btn" id="btn-ru">
         RUS
       </a>
       
@@ -473,7 +473,7 @@
       if (savedLang && !skipAuto && !fromBack && !sessionStorage.getItem('language-page-visited')) {
         // Show brief loading then redirect
         setTimeout(() => {
-          window.location.href = savedLang === 'ru' ? 'index-ru.html' : 'index-eng.html';
+          window.location.href = savedLang === 'ru' ? 'main_ru.html' : 'main_eng.html';
         }, 1000);
       }
     }
