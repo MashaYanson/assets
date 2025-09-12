@@ -53,7 +53,7 @@ button {
   opacity: 1 !important;
 }
 
-/* Prevent gray background flash on parallax sections */
+/* Prevent gray background flash on parallax sections
 .mbr-parallax-background {
   background-color: #000000 !important;
   background-image: url("https://s3.ru1.storage.beget.cloud/88095fdffa8e-tidy-trish/meta4/video/Pink_RAW.mp4") !important;
@@ -63,13 +63,13 @@ button {
 }
 
 /* Specific backgrounds for header sections */
-#header02-4.mbr-parallax-background {
+/* #header02-4.mbr-parallax-background {
   background-image: url("https://s3.ru1.storage.beget.cloud/88095fdffa8e-tidy-trish/meta4/video/Pink_RAW.mp4") !important;
 }
 
 #image01-2.mbr-parallax-background {
   background-image: url("https://s3.ru1.storage.beget.cloud/88095fdffa8e-tidy-trish/meta4/video/Pink_RAW.mp4") !important;
-}
+} */ 
 
 .modalWindow-video-container {
   height: 80%;
